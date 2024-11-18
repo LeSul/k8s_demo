@@ -17,9 +17,9 @@ metadata:
   name: nginx-service
 spec:
   type: LoadBalancer
-selector:
-  app: nginx
-ports: 
-- protocol: TCP
-  port: 80
-  targetport: 80
+  selector:
+    app: nginx
+  ports: 
+  - protocol: TCP
+    port: 80
+    targetport: 80
