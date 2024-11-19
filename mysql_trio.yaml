@@ -20,6 +20,6 @@ metadata:
 spec: 
   containers: 
   - name: mysql-container 
-    image: stratcastor/demo-mysql:latest
+    image: leesullivan24/demo-mysql:latest
     ports: 
     - containerPort: 3306
