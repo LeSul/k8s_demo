@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-deployment
+  labels:
+    app: flask
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: flask
+    spec:
+      containers:
+  - name: flask-containder
+    image: stratcaster/duo-deploy-flask:latest
+    ports:
+    - containerPort: 5500
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: flask
+  ports: 
+  - protocol: TCP
+    port: 5500
+    targetPort: 5500
